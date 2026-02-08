@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -340,7 +341,7 @@ const faqs = [
           Don't risk fines, legal issues, or vacation disruptions. Get your IDP in 5 minutes with our fast, reliable service.
         </p>
         <a 
-          href="/apply"
+          href={`${base}/apply`}
           class="bg-white hover:bg-gray-100 text-blue-600 font-bold py-4 px-8 rounded-lg text-lg transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 inline-block"
         >
           Get Your IDP Now - $49 →

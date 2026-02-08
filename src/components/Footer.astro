@@ -1,23 +1,22 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const currentYear = new Date().getFullYear();
 
 const footerLinks = {
   services: [
-    { href: '/what-is-idp', label: 'What is IDP?' },
-    { href: '/countries', label: 'Valid Countries' },
-    { href: '/pricing', label: 'Pricing' },
-    { href: '/verify', label: 'Track Order' },
+    { href: `${base}/what-is-idp`, label: 'What is IDP?' },
+    { href: `${base}/countries`, label: 'Valid Countries' },
+    { href: `${base}/pricing`, label: 'Pricing' },
+    { href: `${base}/verify`, label: 'Track Order' },
   ],
   support: [
-    { href: '/contact', label: 'Contact Us' },
-    { href: '/faq', label: 'FAQ' },
-    { href: '/about', label: 'About Us' },
-    { href: '/apply', label: 'Apply Now' },
+    { href: `${base}/contact`, label: 'Contact Us' },
+    { href: `${base}/about`, label: 'About Us' },
+    { href: `${base}/pricing`, label: 'Apply Now' },
   ],
   legal: [
-    { href: '/privacy', label: 'Privacy Policy' },
-    { href: '/terms', label: 'Terms of Service' },
-    { href: '/refund', label: 'Refund Policy' },
+    { href: `${base}/privacy`, label: 'Privacy Policy' },
+    { href: `${base}/terms`, label: 'Terms of Service' },
   ]
 };
 ---

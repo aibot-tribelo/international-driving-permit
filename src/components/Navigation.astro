@@ -1,13 +1,14 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const currentPath = Astro.url.pathname;
 
 const navigationItems = [
-  { href: '/', label: 'Home', current: currentPath === '/' },
-  { href: '/countries', label: 'Countries', current: currentPath.startsWith('/countries') },
-  { href: '/what-is-idp', label: 'What is IDP?', current: currentPath === '/what-is-idp' },
-  { href: '/pricing', label: 'Pricing', current: currentPath === '/pricing' },
-  { href: '/about', label: 'About', current: currentPath === '/about' },
-  { href: '/contact', label: 'Contact', current: currentPath === '/contact' },
+  { href: `${base}/`, label: 'Home', current: currentPath === `${base}/` },
+  { href: `${base}/countries`, label: 'Countries', current: currentPath.startsWith(`${base}/countries`) },
+  { href: `${base}/what-is-idp`, label: 'What is IDP?', current: currentPath === `${base}/what-is-idp` },
+  { href: `${base}/pricing`, label: 'Pricing', current: currentPath === `${base}/pricing` },
+  { href: `${base}/about`, label: 'About', current: currentPath === `${base}/about` },
+  { href: `${base}/contact`, label: 'Contact', current: currentPath === `${base}/contact` },
 ];
 ---
 
@@ -16,7 +17,7 @@ const navigationItems = [
     <div class="flex justify-between items-center h-16">
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <a href="/" class="flex items-center group focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md p-1">
+        <a href={`${base}/`} class="flex items-center group focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md p-1">
           <svg class="h-8 w-8 text-blue-600 group-hover:text-blue-700 transition-colors" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M18.92 5.01C18.72 4.42 18.16 4 17.5 4h-11c-.66 0-1.22.42-1.42 1.01L3 11v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 15c-.83 0-1.5-.67-1.5-1.5S5.67 12 6.5 12s1.5.67 1.5 1.5S7.33 15 6.5 15zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 10l1.5-4.5h11L19 10H5z"/>
           </svg>
@@ -50,13 +51,13 @@ const navigationItems = [
       <!-- CTA Buttons -->
       <div class="hidden md:flex items-center space-x-4">
         <a
-          href="/verify"
+          href={`${base}/verify`}
           class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         >
           Track Order
         </a>
         <a
-          href="/apply"
+          href={`${base}/pricing`}
           class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         >
           Apply Now
@@ -103,13 +104,13 @@ const navigationItems = [
       ))}
       <div class="border-t border-gray-200 pt-4 pb-3">
         <a
-          href="/verify"
+          href={`${base}/verify`}
           class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         >
           Track Order
         </a>
         <a
-          href="/apply"
+          href={`${base}/pricing`}
           class="block mx-3 mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-base font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-center"
         >
           Apply Now

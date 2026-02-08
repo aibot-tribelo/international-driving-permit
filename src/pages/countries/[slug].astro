@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
 import countriesData from '../../data/countries.json';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 export async function getStaticPaths() {
   const paths = [];
@@ -57,7 +58,7 @@ const pageDescription = `Essential guide for driving in ${country.name} with you
       <div class="container mx-auto px-4 py-4">
         <ol class="flex items-center space-x-2 text-sm">
           <li>
-            <a href="/" class="text-blue-600 hover:text-blue-800">Home</a>
+            <a href={`${base}/`} class="text-blue-600 hover:text-blue-800">Home</a>
           </li>
           <li>
             <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
@@ -65,7 +66,7 @@ const pageDescription = `Essential guide for driving in ${country.name} with you
             </svg>
           </li>
           <li>
-            <a href="/countries" class="text-blue-600 hover:text-blue-800">Countries</a>
+            <a href={`${base}/countries`} class="text-blue-600 hover:text-blue-800">Countries</a>
           </li>
           <li>
             <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
@@ -307,7 +308,7 @@ const pageDescription = `Essential guide for driving in ${country.name} with you
                   Get your official IDP in 5 minutes. Valid in {country.name} and 194+ other countries.
                 </p>
                 <a 
-                  href="/pricing" 
+                  href={`${base}/pricing`} 
                   class="inline-block bg-white text-blue-600 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors w-full"
                 >
                   Apply for IDP Now
@@ -353,7 +354,7 @@ const pageDescription = `Essential guide for driving in ${country.name} with you
                     ))}
                 </div>
                 <a 
-                  href="/countries" 
+                  href={`${base}/countries`} 
                   class="block mt-4 text-center text-blue-600 hover:text-blue-800 font-medium text-sm"
                 >
                   View All Countries →

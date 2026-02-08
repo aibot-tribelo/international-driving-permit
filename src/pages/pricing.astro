@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import pricingData from '../data/pricing.json';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -252,7 +253,7 @@ const structuredData = {
           Join over 500,000 travelers who trust our service worldwide.
         </p>
         <a 
-          href="/apply"
+          href={`${base}/apply`}
           class="bg-white hover:bg-gray-100 text-blue-600 font-bold py-4 px-8 rounded-lg text-lg transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 inline-block"
         >
           Get Your IDP Now →
