@@ -1,0 +1,268 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import countriesData from '../../data/countries.json';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage", 
+  "name": "International Driving Permit Valid Countries",
+  "description": "Discover all 195+ countries where International Driving Permits are accepted. Browse by region and get country-specific driving information.",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": Object.values(countriesData.regions).flatMap((region, regionIndex) =>
+      region.countries.map((country, countryIndex) => ({
+        "@type": "ListItem",
+        "position": regionIndex * 100 + countryIndex + 1,
+        "item": {
+          "@type": "Place",
+          "name": country.name,
+          "description": `International Driving Permit accepted in ${country.name}`
+        }
+      }))
+    )
+  }
+};
+
+// Count total countries
+const totalCountries = Object.values(countriesData.regions)
+  .reduce((total, region) => total + region.countries.length, 0);
+---
+
+<Layout 
+  title="International Driving Permit Valid Countries - 195+ Destinations"
+  description="Complete list of countries where International Driving Permits are accepted. Browse by region and get detailed driving requirements for each destination."
+  structuredData={structuredData}
+>
+  <Navigation />
+  
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-12 lg:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
+            Countries That Accept International Driving Permits
+          </h1>
+          <p class="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
+            Discover all {totalCountries}+ countries where you can drive with an International Driving Permit. 
+            Get detailed information about driving requirements, speed limits, and travel highlights for each destination.
+          </p>
+          
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="text-2xl font-bold text-blue-600">{totalCountries}+</div>
+              <div class="text-sm text-gray-600">Countries</div>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="text-2xl font-bold text-blue-600">{Object.keys(countriesData.regions).length}</div>
+              <div class="text-sm text-gray-600">Regions</div>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="text-2xl font-bold text-blue-600">100%</div>
+              <div class="text-sm text-gray-600">Coverage</div>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="text-2xl font-bold text-blue-600">5min</div>
+              <div class="text-sm text-gray-600">Get IDP</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Important Notice -->
+    <section class="bg-yellow-50 border-b border-yellow-200 py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0">
+            <svg class="h-6 w-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-yellow-800">Important: Always Check Current Requirements</h3>
+            <p class="mt-2 text-sm text-yellow-700">
+              While International Driving Permits are widely accepted, some countries have specific requirements or restrictions. 
+              Always verify current driving laws and IDP acceptance before traveling. Your IDP must be accompanied by your original domestic license.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Countries by Region -->
+    <section class="bg-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Region Navigation -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">Browse by Region</h2>
+          <div class="flex flex-wrap gap-4 mb-8">
+            {Object.entries(countriesData.regions).map(([regionKey, region]) => (
+              <a 
+                href={`#${regionKey}`}
+                class="bg-blue-100 hover:bg-blue-200 text-blue-700 px-4 py-2 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
+                {region.name} ({region.countries.length})
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Regions -->
+        {Object.entries(countriesData.regions).map(([regionKey, region]) => (
+          <div id={regionKey} class="mb-16 scroll-mt-20">
+            <div class="flex items-center justify-between mb-8">
+              <h3 class="text-3xl font-bold text-gray-900 flex items-center">
+                {region.name}
+                <span class="ml-3 text-lg text-gray-500 font-normal">
+                  ({region.countries.length} countries)
+                </span>
+              </h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {region.countries.map((country) => (
+                <a 
+                  href={`/countries/${country.slug}`}
+                  class="group bg-white border border-gray-200 rounded-lg p-6 hover:border-blue-300 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                >
+                  <div class="flex items-start justify-between mb-4">
+                    <div>
+                      <h4 class="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                        {country.name}
+                      </h4>
+                      <p class="text-sm text-gray-500 mt-1">Capital: {country.capital}</p>
+                    </div>
+                    <div class="flex-shrink-0">
+                      <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="space-y-2 text-sm text-gray-600 mb-4">
+                    <div class="flex items-center">
+                      <svg class="w-4 h-4 mr-2 text-gray-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                      </svg>
+                      Drives on {country.drivingSide} side
+                    </div>
+                    <div class="flex items-center">
+                      <svg class="w-4 h-4 mr-2 text-gray-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                      </svg>
+                      Urban speed: {country.speedLimits.urban}
+                    </div>
+                  </div>
+
+                  {country.highlights && (
+                    <div class="mt-4">
+                      <p class="text-sm text-gray-600 line-clamp-2">
+                        {country.highlights[0]}
+                      </p>
+                    </div>
+                  )}
+
+                  <div class="mt-4 pt-4 border-t border-gray-100">
+                    <span class="text-sm font-medium text-blue-600 group-hover:text-blue-700">
+                      View driving guide →
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Quick Facts -->
+    <section class="bg-gray-50 py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            International Driving Permit Quick Facts
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Legal Translation</h3>
+            <p class="text-gray-600 text-sm">
+              IDPs are official translations of your domestic license, recognized by international authorities
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Rental Requirement</h3>
+            <p class="text-gray-600 text-sm">
+              Required by all major car rental companies worldwide for foreign license holders
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Multiple Languages</h3>
+            <p class="text-gray-600 text-sm">
+              Translated into 10+ languages including Arabic, Chinese, Russian, and Spanish
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">1-Year Validity</h3>
+            <p class="text-gray-600 text-sm">
+              Valid for one full year from issue date, cannot be renewed (must apply for new one)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-blue-600 py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+          Ready to Drive in {totalCountries}+ Countries Worldwide?
+        </h2>
+        <p class="text-xl text-blue-100 mb-8">
+          Get your International Driving Permit in 5 minutes and unlock the freedom to explore the world by car. 
+          Valid everywhere, accepted by all rental companies.
+        </p>
+        <a 
+          href="/apply"
+          class="bg-white hover:bg-gray-100 text-blue-600 font-bold py-4 px-8 rounded-lg text-lg transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 inline-block"
+        >
+          Get Your IDP Now - $49 →
+        </a>
+        <p class="text-blue-200 text-sm mt-4">
+          ✅ Instant digital delivery • ✅ Physical booklet available • ✅ 100% money-back guarantee
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

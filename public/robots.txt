@@ -1,0 +1,36 @@
+# robots.txt for International Driving Permit Authority
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://internationalautomobileauthority.com/sitemap.xml
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block access to admin and internal areas (if they exist)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /.well-known/
+Disallow: /tmp/
+
+# Allow access to important pages
+Allow: /countries/
+Allow: /pricing
+Allow: /what-is-idp
+Allow: /about
+Allow: /contact
+Allow: /verify
+Allow: /privacy
+Allow: /terms
+
+# Crawl delay (optional, be respectful to servers)
+Crawl-delay: 1

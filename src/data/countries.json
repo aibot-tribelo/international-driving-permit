@@ -1,0 +1,348 @@
+{
+  "regions": {
+    "europe": {
+      "name": "Europe",
+      "countries": [
+        {
+          "name": "Albania",
+          "code": "AL",
+          "slug": "albania",
+          "capital": "Tirana",
+          "drivingSide": "right",
+          "speedLimits": {
+            "urban": "40 km/h",
+            "rural": "90 km/h",
+            "highway": "110 km/h"
+          },
+          "requirements": [
+            "Valid domestic driving license",
+            "International Driving Permit (IDP)",
+            "Passport",
+            "Car insurance"
+          ],
+          "highlights": [
+            "Beautiful Albanian Riviera coastline",
+            "Historic castles and Ottoman architecture",
+            "Affordable travel destination",
+            "Stunning mountain landscapes"
+          ]
+        },
+        {
+          "name": "Austria",
+          "code": "AT",
+          "slug": "austria",
+          "capital": "Vienna",
+          "drivingSide": "right",
+          "speedLimits": {
+            "urban": "50 km/h",
+            "rural": "100 km/h",
+            "highway": "130 km/h"
+          },
+          "requirements": [
+            "Valid domestic driving license",
+            "International Driving Permit (IDP)",
+            "Passport",
+            "Third-party insurance minimum",
+            "Vignette for highways"
+          ],
+          "highlights": [
+            "Scenic Alpine routes",
+            "Historic Vienna and Salzburg",
+            "World-class ski resorts",
+            "Sound of Music filming locations"
+          ]
+        },
+        {
+          "name": "France",
+          "code": "FR",
+          "slug": "france",
+          "capital": "Paris",
+          "drivingSide": "right",
+          "speedLimits": {
+            "urban": "50 km/h",
+            "rural": "80-90 km/h",
+            "highway": "130 km/h"
+          },
+          "requirements": [
+            "Valid domestic driving license",
+            "International Driving Permit (IDP)",
+            "Passport",
+            "Insurance certificate",
+            "Vehicle registration"
+          ],
+          "highlights": [
+            "Romantic Paris and Eiffel Tower",
+            "French Riviera and Mediterranean coast",
+            "Loire Valley castles",
+            "World-renowned cuisine and wine regions"
+          ]
+        },
+        {
+          "name": "Germany",
+          "code": "DE",
+          "slug": "germany",
+          "capital": "Berlin",
+          "drivingSide": "right",
+          "speedLimits": {
+            "urban": "50 km/h",
+            "rural": "100 km/h",
+            "highway": "No general limit (advised 130 km/h)"
+          },
+          "requirements": [
+            "Valid domestic driving license",
+            "International Driving Permit (IDP)",
+            "Passport",
+            "Liability insurance",
+            "Vehicle registration documents"
+          ],
+          "highlights": [
+            "Famous Autobahn highway system",
+            "Historic Berlin and Brandenburg Gate",
+            "Bavarian Alps and Neuschwanstein Castle",
+            "Oktoberfest and beer culture"
+          ]
+        },
+        {
+          "name": "Italy",
+          "code": "IT",
+          "slug": "italy",
+          "capital": "Rome",
+          "drivingSide": "right",
+          "speedLimits": {
+            "urban": "50 km/h",
+            "rural": "90 km/h",
+            "highway": "130 km/h"
+          },
+          "requirements": [
+            "Valid domestic driving license",
+            "International Driving Permit (IDP)",
+            "Passport",
+            "Insurance certificate",
+            "Vehicle registration"
+          ],
+          "highlights": [
+            "Ancient Rome and Colosseum",
+            "Scenic Amalfi Coast and Tuscany",
+            "Venice canals and gondolas",
+            "Renaissance art and architecture"
+          ]
+        },
+        {
+          "name": "Spain",
+          "code": "ES",
+          "slug": "spain",
+          "capital": "Madrid",
+          "drivingSide": "right",
+          "speedLimits": {
+            "urban": "50 km/h",
+            "rural": "90 km/h",
+            "highway": "120 km/h"
+          },
+          "requirements": [
+            "Valid domestic driving license",
+            "International Driving Permit (IDP)",
+            "Passport",
+            "Insurance certificate",
+            "Vehicle registration"
+          ],
+          "highlights": [
+            "Vibrant Barcelona and Sagrada Familia",
+            "Historic Madrid and Prado Museum",
+            "Beautiful Andalusian cities",
+            "Costa del Sol beaches"
+          ]
+        },
+        {
+          "name": "United Kingdom",
+          "code": "GB",
+          "slug": "united-kingdom",
+          "capital": "London",
+          "drivingSide": "left",
+          "speedLimits": {
+            "urban": "30 mph (48 km/h)",
+            "rural": "60 mph (96 km/h)",
+            "highway": "70 mph (112 km/h)"
+          },
+          "requirements": [
+            "Valid domestic driving license",
+            "International Driving Permit (IDP)",
+            "Passport",
+            "Insurance certificate",
+            "Vehicle registration"
+          ],
+          "highlights": [
+            "Historic London and Big Ben",
+            "Scottish Highlands and castles",
+            "Cotswolds countryside",
+            "Welsh valleys and coast"
+          ]
+        }
+      ]
+    },
+    "north-america": {
+      "name": "North America",
+      "countries": [
+        {
+          "name": "United States",
+          "code": "US",
+          "slug": "united-states",
+          "capital": "Washington D.C.",
+          "drivingSide": "right",
+          "speedLimits": {
+            "urban": "25-35 mph (varies by city)",
+            "rural": "55-70 mph (varies by state)",
+            "highway": "65-85 mph (varies by state)"
+          },
+          "requirements": [
+            "Valid domestic driving license",
+            "International Driving Permit (IDP)",
+            "Passport",
+            "Auto insurance",
+            "Vehicle registration"
+          ],
+          "highlights": [
+            "Iconic Route 66 road trip",
+            "National parks and natural wonders",
+            "Vibrant cities like NYC and LA",
+            "Diverse landscapes and cultures"
+          ]
+        },
+        {
+          "name": "Canada",
+          "code": "CA",
+          "slug": "canada",
+          "capital": "Ottawa",
+          "drivingSide": "right",
+          "speedLimits": {
+            "urban": "50 km/h",
+            "rural": "80-90 km/h",
+            "highway": "100-110 km/h"
+          },
+          "requirements": [
+            "Valid domestic driving license",
+            "International Driving Permit (IDP)",
+            "Passport",
+            "Auto insurance",
+            "Vehicle registration"
+          ],
+          "highlights": [
+            "Stunning Rocky Mountains",
+            "Cosmopolitan cities Toronto and Vancouver",
+            "Niagara Falls",
+            "French culture in Quebec"
+          ]
+        }
+      ]
+    },
+    "oceania": {
+      "name": "Oceania",
+      "countries": [
+        {
+          "name": "Australia",
+          "code": "AU",
+          "slug": "australia",
+          "capital": "Canberra",
+          "drivingSide": "left",
+          "speedLimits": {
+            "urban": "50 km/h",
+            "rural": "100-110 km/h",
+            "highway": "110 km/h"
+          },
+          "requirements": [
+            "Valid domestic driving license",
+            "International Driving Permit (IDP)",
+            "Passport",
+            "Compulsory third-party insurance",
+            "Vehicle registration"
+          ],
+          "highlights": [
+            "Great Ocean Road scenic drive",
+            "Sydney Opera House and Harbor",
+            "Unique wildlife and Outback",
+            "Beautiful beaches and reef diving"
+          ]
+        },
+        {
+          "name": "New Zealand",
+          "code": "NZ",
+          "slug": "new-zealand",
+          "capital": "Wellington",
+          "drivingSide": "left",
+          "speedLimits": {
+            "urban": "50 km/h",
+            "rural": "100 km/h",
+            "highway": "100 km/h"
+          },
+          "requirements": [
+            "Valid domestic driving license",
+            "International Driving Permit (IDP)",
+            "Passport",
+            "Third-party insurance",
+            "Vehicle registration"
+          ],
+          "highlights": [
+            "Lord of the Rings filming locations",
+            "Stunning fjords and mountains",
+            "Adventure sports capital Queenstown",
+            "Maori culture and traditions"
+          ]
+        }
+      ]
+    },
+    "asia": {
+      "name": "Asia",
+      "countries": [
+        {
+          "name": "Japan",
+          "code": "JP",
+          "slug": "japan",
+          "capital": "Tokyo",
+          "drivingSide": "left",
+          "speedLimits": {
+            "urban": "40 km/h",
+            "rural": "60 km/h",
+            "highway": "100 km/h"
+          },
+          "requirements": [
+            "Valid domestic driving license",
+            "International Driving Permit (IDP)",
+            "Passport",
+            "Compulsory insurance",
+            "Vehicle inspection certificate"
+          ],
+          "highlights": [
+            "Modern Tokyo and traditional temples",
+            "Mount Fuji and cherry blossoms",
+            "Bullet trains and technology",
+            "Unique culture and cuisine"
+          ]
+        },
+        {
+          "name": "Thailand",
+          "code": "TH",
+          "slug": "thailand",
+          "capital": "Bangkok",
+          "drivingSide": "left",
+          "speedLimits": {
+            "urban": "50 km/h",
+            "rural": "90 km/h",
+            "highway": "120 km/h"
+          },
+          "requirements": [
+            "Valid domestic driving license",
+            "International Driving Permit (IDP)",
+            "Passport",
+            "Compulsory insurance",
+            "Vehicle registration"
+          ],
+          "highlights": [
+            "Vibrant Bangkok temples and markets",
+            "Tropical islands and beaches",
+            "Rich cultural heritage",
+            "Delicious Thai cuisine"
+          ]
+        }
+      ]
+    }
+  }
+}

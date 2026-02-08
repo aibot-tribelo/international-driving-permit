@@ -1,0 +1,142 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Sarah Mitchell",
+      "location": "London, UK",
+      "rating": 5,
+      "text": "Absolutely fantastic service! I got my IDP in just 5 minutes as promised. The digital version was perfect for my trip to Italy, and the physical booklet arrived the next day. No hassles at the car rental agency either.",
+      "tripDestination": "Italy",
+      "verified": true,
+      "date": "2026-01-15",
+      "avatar": "SM"
+    },
+    {
+      "id": 2,
+      "name": "Michael Chen",
+      "location": "Toronto, Canada",
+      "rating": 5,
+      "text": "I needed my IDP urgently for a business trip to Germany. The customer service was exceptional - they processed my application immediately and I had my digital permit within minutes. Highly recommended!",
+      "tripDestination": "Germany",
+      "verified": true,
+      "date": "2026-01-08",
+      "avatar": "MC"
+    },
+    {
+      "id": 3,
+      "name": "Emma Rodriguez",
+      "location": "Madrid, Spain",
+      "rating": 5,
+      "text": "Perfect for our European road trip! We visited 6 countries and the IDP was accepted everywhere. The application process was so simple - uploaded documents, paid, and got the permit instantly.",
+      "tripDestination": "Europe",
+      "verified": true,
+      "date": "2026-01-22",
+      "avatar": "ER"
+    },
+    {
+      "id": 4,
+      "name": "James Wilson",
+      "location": "Sydney, Australia",
+      "rating": 5,
+      "text": "Was skeptical at first about getting an IDP online, but this service proved me wrong. Everything was legitimate and professional. Used it in Japan without any issues. Great peace of mind!",
+      "tripDestination": "Japan",
+      "verified": true,
+      "date": "2026-01-18",
+      "avatar": "JW"
+    },
+    {
+      "id": 5,
+      "name": "Lisa Thompson",
+      "location": "New York, USA",
+      "rating": 5,
+      "text": "The 24/7 customer support is amazing! I had questions about using my IDP in different countries, and they answered everything clearly. Made my France vacation so much smoother.",
+      "tripDestination": "France",
+      "verified": true,
+      "date": "2026-01-12",
+      "avatar": "LT"
+    },
+    {
+      "id": 6,
+      "name": "David Kumar",
+      "location": "Mumbai, India",
+      "rating": 5,
+      "text": "Exceptional service quality. The digital IDP was immediately available, and the physical copy arrived exactly when promised. Used it across multiple countries in my European business tour.",
+      "tripDestination": "Europe",
+      "verified": true,
+      "date": "2026-01-25",
+      "avatar": "DK"
+    },
+    {
+      "id": 7,
+      "name": "Sophie Dubois",
+      "location": "Paris, France",
+      "rating": 5,
+      "text": "Très professionnel! Got my IDP for a trip to the US. The entire process was seamless, and the customer service team was very helpful in explaining the requirements for different states.",
+      "tripDestination": "United States",
+      "verified": true,
+      "date": "2026-01-20",
+      "avatar": "SD"
+    },
+    {
+      "id": 8,
+      "name": "Robert Anderson",
+      "location": "Manchester, UK",
+      "rating": 5,
+      "text": "I've used other IDP services before, but none come close to this level of efficiency. The application was approved instantly, and I was driving in Portugal the same day. Brilliant!",
+      "tripDestination": "Portugal",
+      "verified": true,
+      "date": "2026-01-28",
+      "avatar": "RA"
+    },
+    {
+      "id": 9,
+      "name": "Maria Gonzalez",
+      "location": "Barcelona, Spain",
+      "rating": 5,
+      "text": "Outstanding experience! The website was easy to navigate, the pricing was fair, and delivery was instant. Used my digital IDP across Scandinavia without any problems whatsoever.",
+      "tripDestination": "Scandinavia",
+      "verified": true,
+      "date": "2026-01-14",
+      "avatar": "MG"
+    },
+    {
+      "id": 10,
+      "name": "Thomas Mueller",
+      "location": "Berlin, Germany",
+      "rating": 5,
+      "text": "Superb service! Needed an IDP for Australia and got it immediately. The physical booklet quality is excellent, and all the translations are accurate. Couldn't be happier with the service.",
+      "tripDestination": "Australia",
+      "verified": true,
+      "date": "2026-01-16",
+      "avatar": "TM"
+    },
+    {
+      "id": 11,
+      "name": "Jennifer Park",
+      "location": "Seoul, South Korea",
+      "rating": 5,
+      "text": "Amazing speed and reliability. I applied on Sunday evening and had my IDP within 5 minutes. The customer support team even called to confirm everything was correct. Exceptional service!",
+      "tripDestination": "New Zealand",
+      "verified": true,
+      "date": "2026-01-21",
+      "avatar": "JP"
+    },
+    {
+      "id": 12,
+      "name": "Alessandro Rossi",
+      "location": "Rome, Italy",
+      "rating": 5,
+      "text": "Perfetto! Used this service for my California road trip. The IDP was accepted at every car rental location and by police during a routine check. Professional and trustworthy service.",
+      "tripDestination": "United States",
+      "verified": true,
+      "date": "2026-01-19",
+      "avatar": "AR"
+    }
+  ],
+  "stats": {
+    "totalCustomers": "500000+",
+    "averageRating": 4.9,
+    "countries": "195+",
+    "processingTime": "5 minutes"
+  }
+}

@@ -1,0 +1,397 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import countriesData from '../../data/countries.json';
+
+export async function getStaticPaths() {
+  const paths = [];
+  
+  Object.values(countriesData.regions).forEach(region => {
+    region.countries.forEach(country => {
+      paths.push({
+        params: { slug: country.slug },
+        props: { country, region: region.name }
+      });
+    });
+  });
+  
+  return paths;
+}
+
+const { country, region } = Astro.props;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "TravelAction",
+  "name": `Driving in ${country.name} with International Driving Permit`,
+  "description": `Complete guide to driving in ${country.name} with your International Driving Permit. Requirements, regulations, and travel tips.`,
+  "location": {
+    "@type": "Country",
+    "name": country.name,
+    "addressCountry": country.code
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "International Driving Permit Authority"
+  }
+};
+
+const pageTitle = `Driving in ${country.name} with IDP | International Driving Permit Guide`;
+const pageDescription = `Essential guide for driving in ${country.name} with your International Driving Permit. Speed limits, requirements, and travel highlights for ${country.name}.`;
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+  
+  <Navigation />
+  
+  <main class="min-h-screen bg-gradient-to-br from-blue-50 to-white">
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-50">
+      Skip to main content
+    </a>
+
+    <!-- Breadcrumb -->
+    <nav class="bg-white border-b border-gray-200" aria-label="Breadcrumb">
+      <div class="container mx-auto px-4 py-4">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li>
+            <a href="/" class="text-blue-600 hover:text-blue-800">Home</a>
+          </li>
+          <li>
+            <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+            </svg>
+          </li>
+          <li>
+            <a href="/countries" class="text-blue-600 hover:text-blue-800">Countries</a>
+          </li>
+          <li>
+            <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+            </svg>
+          </li>
+          <li>
+            <span class="text-gray-500" aria-current="page">{country.name}</span>
+          </li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center mb-4">
+            <span class="text-6xl mr-4" role="img" aria-label={`${country.name} flag`}>
+              {country.code === 'GB' ? '🇬🇧' : 
+               country.code === 'US' ? '🇺🇸' : 
+               country.code === 'FR' ? '🇫🇷' :
+               country.code === 'DE' ? '🇩🇪' :
+               country.code === 'ES' ? '🇪🇸' :
+               country.code === 'IT' ? '🇮🇹' :
+               country.code === 'AU' ? '🇦🇺' :
+               country.code === 'CA' ? '🇨🇦' :
+               country.code === 'JP' ? '🇯🇵' :
+               '🌍'}
+            </span>
+            <div>
+              <h1 class="text-4xl md:text-5xl font-bold mb-2">Driving in {country.name}</h1>
+              <p class="text-xl opacity-90">
+                Complete guide for international drivers visiting {country.capital}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Facts -->
+    <section class="py-8 bg-white border-b border-gray-200">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div class="bg-gray-50 rounded-lg p-4">
+              <div class="text-2xl font-bold text-blue-600 mb-1">{country.code}</div>
+              <div class="text-sm text-gray-600">Country Code</div>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4">
+              <div class="text-2xl font-bold text-blue-600 mb-1">{country.capital}</div>
+              <div class="text-sm text-gray-600">Capital City</div>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4">
+              <div class="text-2xl font-bold text-blue-600 mb-1 capitalize">{country.drivingSide}</div>
+              <div class="text-sm text-gray-600">Traffic Side</div>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4">
+              <div class="text-2xl font-bold text-blue-600 mb-1">IDP</div>
+              <div class="text-sm text-gray-600">Required</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section id="main-content" class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid lg:grid-cols-3 gap-12">
+            <!-- Main Content -->
+            <div class="lg:col-span-2 space-y-12">
+              <!-- Overview -->
+              <div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Driving Overview</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                  {country.name} welcomes international drivers with a valid International Driving Permit (IDP). 
+                  Whether you're exploring {country.capital} or venturing into the countryside, 
+                  having the proper documentation ensures a smooth and legal driving experience.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                  This comprehensive guide covers everything you need to know about driving in {country.name}, 
+                  from speed limits and traffic rules to insurance requirements and local driving customs.
+                </p>
+              </div>
+
+              <!-- Driving Requirements -->
+              <div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">
+                  <svg class="w-8 h-8 text-blue-600 inline-block mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                  </svg>
+                  Required Documents
+                </h2>
+                <div class="space-y-4">
+                  {country.requirements.map((requirement, index) => (
+                    <div class="flex items-start">
+                      <svg class="w-6 h-6 text-green-600 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <div>
+                        <span class="text-gray-900 font-medium">{requirement}</span>
+                        {requirement.includes('International Driving Permit') && (
+                          <p class="text-sm text-gray-600 mt-1">
+                            Must be accompanied by your original domestic license at all times
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div class="mt-8 p-6 bg-yellow-50 border border-yellow-200 rounded-lg">
+                  <div class="flex items-start">
+                    <svg class="w-6 h-6 text-yellow-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                    </svg>
+                    <div>
+                      <h4 class="font-semibold text-yellow-900 mb-2">Important Reminder</h4>
+                      <p class="text-yellow-800">
+                        Your International Driving Permit must be valid and not expired. 
+                        Always carry both your IDP and original domestic license when driving in {country.name}.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Speed Limits -->
+              <div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">
+                  <svg class="w-8 h-8 text-red-600 inline-block mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  Speed Limits
+                </h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                  <div class="text-center p-6 bg-gray-50 rounded-lg border border-gray-200">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">{country.speedLimits.urban}</div>
+                    <h3 class="font-semibold text-gray-900 mb-1">Urban Areas</h3>
+                    <p class="text-sm text-gray-600">City and town centers</p>
+                  </div>
+                  <div class="text-center p-6 bg-gray-50 rounded-lg border border-gray-200">
+                    <div class="text-3xl font-bold text-green-600 mb-2">{country.speedLimits.rural}</div>
+                    <h3 class="font-semibold text-gray-900 mb-1">Rural Roads</h3>
+                    <p class="text-sm text-gray-600">Country roads and highways</p>
+                  </div>
+                  <div class="text-center p-6 bg-gray-50 rounded-lg border border-gray-200">
+                    <div class="text-3xl font-bold text-purple-600 mb-2">{country.speedLimits.highway}</div>
+                    <h3 class="font-semibold text-gray-900 mb-1">Highways</h3>
+                    <p class="text-sm text-gray-600">Major motorways and expressways</p>
+                  </div>
+                </div>
+
+                <div class="mt-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <p class="text-red-800 text-sm">
+                    <strong>Speed cameras are common in {country.name}.</strong> 
+                    Fines for speeding can be substantial, and some countries have on-the-spot fines for tourists.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Travel Highlights -->
+              {country.highlights && (
+                <div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8">
+                  <h2 class="text-2xl font-bold text-gray-900 mb-6">
+                    <svg class="w-8 h-8 text-green-600 inline-block mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                    </svg>
+                    Travel Highlights
+                  </h2>
+                  <div class="grid md:grid-cols-2 gap-4">
+                    {country.highlights.map((highlight, index) => (
+                      <div class="flex items-start p-4 bg-green-50 rounded-lg border border-green-200">
+                        <svg class="w-5 h-5 text-green-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span class="text-green-800">{highlight}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <!-- Driving Tips -->
+              <div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">
+                  <svg class="w-8 h-8 text-purple-600 inline-block mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  Local Driving Tips
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h3 class="font-semibold text-gray-900 mb-3">Traffic Side</h3>
+                    <p class="text-gray-700 mb-4">
+                      In {country.name}, traffic drives on the <strong>{country.drivingSide}</strong> side of the road. 
+                      {country.drivingSide === 'right' 
+                        ? 'This is the same as most European countries and the US.' 
+                        : 'This is the same as the UK, Ireland, and several other countries.'}
+                    </p>
+                    
+                    <h3 class="font-semibold text-gray-900 mb-3">Fuel & Tolls</h3>
+                    <p class="text-gray-700">
+                      {country.name === 'France' ? 'Expect toll roads on major highways. Keep some cash or cards ready for toll stations.' :
+                       country.name === 'Germany' ? 'Most highways (Autobahn) are toll-free for cars, but some sections may have tolls.' :
+                       country.name === 'Italy' ? 'Highway tolls are common. Get a ticket when entering and pay when exiting.' :
+                       'Check if toll roads exist and prepare payment methods accordingly.'}
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h3 class="font-semibold text-gray-900 mb-3">Parking</h3>
+                    <p class="text-gray-700 mb-4">
+                      In {country.capital}, parking can be challenging. Look for designated parking areas 
+                      and be aware of time restrictions. Many cities have Park & Ride systems.
+                    </p>
+                    
+                    <h3 class="font-semibold text-gray-900 mb-3">Emergency Numbers</h3>
+                    <p class="text-gray-700">
+                      <strong>Emergency:</strong> 112 (EU standard)<br>
+                      <strong>Police:</strong> varies by country<br>
+                      Keep these numbers saved in your phone.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1 space-y-8">
+              <!-- Get Your IDP -->
+              <div class="bg-blue-600 text-white rounded-lg shadow-lg p-8 text-center sticky top-8">
+                <h3 class="text-xl font-bold mb-4">Need an International Driving Permit?</h3>
+                <p class="mb-6 opacity-90">
+                  Get your official IDP in 5 minutes. Valid in {country.name} and 194+ other countries.
+                </p>
+                <a 
+                  href="/pricing" 
+                  class="inline-block bg-white text-blue-600 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors w-full"
+                >
+                  Apply for IDP Now
+                </a>
+                <p class="text-sm opacity-75 mt-4">
+                  ✓ 5-minute processing<br>
+                  ✓ Digital delivery<br>
+                  ✓ Global recognition
+                </p>
+              </div>
+
+              <!-- Related Countries -->
+              <div class="bg-white rounded-lg shadow-lg border border-gray-100 p-6">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">Other {region} Countries</h3>
+                <div class="space-y-3">
+                  {Object.values(countriesData.regions).find(r => r.name === region)?.countries
+                    .filter(c => c.slug !== country.slug)
+                    .slice(0, 5)
+                    .map(relatedCountry => (
+                      <a 
+                        href={`/countries/${relatedCountry.slug}`}
+                        class="block p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+                      >
+                        <div class="flex items-center">
+                          <span class="text-2xl mr-3" role="img" aria-label={`${relatedCountry.name} flag`}>
+                            {relatedCountry.code === 'GB' ? '🇬🇧' : 
+                             relatedCountry.code === 'US' ? '🇺🇸' : 
+                             relatedCountry.code === 'FR' ? '🇫🇷' :
+                             relatedCountry.code === 'DE' ? '🇩🇪' :
+                             relatedCountry.code === 'ES' ? '🇪🇸' :
+                             relatedCountry.code === 'IT' ? '🇮🇹' :
+                             relatedCountry.code === 'AU' ? '🇦🇺' :
+                             relatedCountry.code === 'CA' ? '🇨🇦' :
+                             relatedCountry.code === 'JP' ? '🇯🇵' :
+                             '🌍'}
+                          </span>
+                          <div>
+                            <div class="font-medium text-gray-900">{relatedCountry.name}</div>
+                            <div class="text-sm text-gray-600">{relatedCountry.capital}</div>
+                          </div>
+                        </div>
+                      </a>
+                    ))}
+                </div>
+                <a 
+                  href="/countries" 
+                  class="block mt-4 text-center text-blue-600 hover:text-blue-800 font-medium text-sm"
+                >
+                  View All Countries →
+                </a>
+              </div>
+
+              <!-- Quick Facts -->
+              <div class="bg-gray-50 rounded-lg border border-gray-200 p-6">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">Quick Facts</h3>
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">Region:</span>
+                    <span class="font-medium">{region}</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">Traffic side:</span>
+                    <span class="font-medium capitalize">{country.drivingSide}</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">IDP required:</span>
+                    <span class="font-medium text-green-600">Yes</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">Max urban speed:</span>
+                    <span class="font-medium">{country.speedLimits.urban}</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">Max highway speed:</span>
+                    <span class="font-medium">{country.speedLimits.highway}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

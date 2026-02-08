@@ -1,17 +1,380 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import EligibilityChecker from '../components/EligibilityChecker';
+import Testimonials from '../components/Testimonials.astro';
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "International Driving Permit Authority",
+  "url": "https://internationalautomobileauthority.com",
+  "logo": "https://internationalautomobileauthority.com/logo.png",
+  "description": "Get your International Driving Permit online in 5 minutes. Valid in 195+ countries worldwide with instant digital delivery.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-800-IDP-HELP",
+    "contactType": "customer service",
+    "availableLanguage": ["English"],
+    "hoursAvailable": "24/7"
+  },
+  "service": {
+    "@type": "Service",
+    "name": "International Driving Permit",
+    "description": "Official International Driving Permit translation service",
+    "provider": {
+      "@type": "Organization",
+      "name": "International Driving Permit Authority"
+    }
+  }
+};
+
+const testimonials = [
+  {
+    name: "Sarah Johnson",
+    country: "🇺🇸 United States",
+    text: "Got my IDP in 3 minutes! Used it in 6 countries across Europe. No issues with car rentals or police.",
+    rating: 5
+  },
+  {
+    name: "Marco Rossi", 
+    country: "🇮🇹 Italy",
+    text: "Professional service and fast delivery. The physical booklet looks official and was accepted everywhere.",
+    rating: 5
+  },
+  {
+    name: "Chen Wei",
+    country: "🇸🇬 Singapore", 
+    text: "Emergency trip to Japan, needed IDP urgently. Got digital copy in 2 minutes and physical copy next day!",
+    rating: 5
+  }
+];
+
+const features = [
+  {
+    icon: "⚡",
+    title: "5-Minute Processing",
+    description: "Get your digital IDP instantly delivered to your email in just 5 minutes"
+  },
+  {
+    icon: "🌍",
+    title: "Valid in 195+ Countries",
+    description: "Drive legally in almost every country worldwide with our internationally recognized permits"
+  },
+  {
+    icon: "📱",
+    title: "Digital + Physical Options",
+    description: "Choose digital-only for instant access or get both digital and physical booklet delivered"
+  },
+  {
+    icon: "🛡️",
+    title: "100% Guarantee", 
+    description: "Money-back guarantee and free replacements if lost or damaged"
+  },
+  {
+    icon: "🎧",
+    title: "24/7 Support",
+    description: "Round-the-clock customer support via phone, chat, and email"
+  },
+  {
+    icon: "✈️",
+    title: "Worldwide Shipping",
+    description: "Express shipping available to any destination globally"
+  }
+];
+
+const stats = [
+  { number: "500K+", label: "Happy Travelers" },
+  { number: "195+", label: "Countries Covered" },
+  { number: "5 min", label: "Average Processing" },
+  { number: "99.9%", label: "Acceptance Rate" }
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout 
+  title="International Driving Permit - Get Your IDP in 5 Minutes"
+  description="Get your International Driving Permit online in 5 minutes. Valid in 195+ countries. Digital delivery with worldwide shipping. Apply now and drive legally abroad!"
+  structuredData={structuredData}
+>
+  <Navigation />
+  
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-12 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+          <div class="mb-8 lg:mb-0">
+            <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+              Get Your 
+              <span class="text-blue-600">International Driving Permit</span>
+              in 5 Minutes
+            </h1>
+            <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+              Drive legally in 195+ countries worldwide. Instant digital delivery with optional physical booklet. 
+              Trusted by over 500,000 international travelers.
+            </p>
+            
+            <!-- Key Benefits -->
+            <div class="flex flex-wrap gap-4 mb-8">
+              <div class="flex items-center bg-white rounded-full px-4 py-2 shadow-sm">
+                <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm font-medium text-gray-700">5-min digital delivery</span>
+              </div>
+              <div class="flex items-center bg-white rounded-full px-4 py-2 shadow-sm">
+                <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm font-medium text-gray-700">195+ countries</span>
+              </div>
+              <div class="flex items-center bg-white rounded-full px-4 py-2 shadow-sm">
+                <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm font-medium text-gray-700">Money-back guarantee</span>
+              </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a 
+                href="/apply"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-center"
+              >
+                Apply Now - $49 →
+              </a>
+              <a 
+                href="/pricing"
+                class="border border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 font-semibold py-4 px-8 rounded-lg text-lg transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 text-center"
+              >
+                View Pricing
+              </a>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="mt-8 pt-8 border-t border-gray-200">
+              <div class="flex items-center justify-between text-sm text-gray-600">
+                <div class="flex items-center">
+                  <span class="font-medium">Trusted by:</span>
+                  <div class="ml-4 flex space-x-1">
+                    {Array.from({length: 5}).map(() => (
+                      <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <span class="ml-2">500,000+ travelers</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Eligibility Checker -->
+          <div class="lg:pl-8">
+            <EligibilityChecker client:load />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-12 border-b">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          {stats.map((stat) => (
+            <div class="text-center">
+              <div class="text-3xl lg:text-4xl font-bold text-blue-600 mb-2">
+                {stat.number}
+              </div>
+              <div class="text-sm lg:text-base text-gray-600">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-gray-50 py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            Why Choose Our International Driving Permits?
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            We make getting your IDP fast, easy, and reliable. Join hundreds of thousands of satisfied travelers worldwide.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature) => (
+            <div class="bg-white p-6 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
+              <div class="text-3xl mb-4">{feature.icon}</div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                {feature.title}
+              </h3>
+              <p class="text-gray-600">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="bg-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            Get Your IDP in 3 Simple Steps
+          </h2>
+          <p class="text-xl text-gray-600">
+            Our streamlined process gets you driving internationally in minutes
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span class="text-2xl font-bold text-blue-600">1</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Fill Application
+            </h3>
+            <p class="text-gray-600">
+              Complete our simple online form with your details and upload your license photo
+            </p>
+          </div>
+          
+          <div class="text-center">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span class="text-2xl font-bold text-blue-600">2</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Choose Your Plan
+            </h3>
+            <p class="text-gray-600">
+              Select digital-only for instant access or add physical booklet for complete coverage
+            </p>
+          </div>
+          
+          <div class="text-center">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span class="text-2xl font-bold text-blue-600">3</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Receive Your IDP
+            </h3>
+            <p class="text-gray-600">
+              Get your digital IDP in 5 minutes via email, with optional physical delivery worldwide
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a 
+            href="/apply"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          >
+            Start Your Application →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <Testimonials />
+
+    <!-- FAQ Section -->
+    <section class="bg-white py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-xl text-gray-600">
+            Quick answers to common questions about International Driving Permits
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <details class="group bg-gray-50 rounded-lg">
+            <summary class="flex justify-between items-center p-6 cursor-pointer focus:outline-none focus:bg-gray-100 list-none">
+              <h3 class="font-semibold text-gray-900">Do I need an International Driving Permit?</h3>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Yes, most countries require an International Driving Permit alongside your domestic license for tourists. It serves as an official translation and is required by car rental companies and local authorities in 195+ countries worldwide.
+            </div>
+          </details>
+
+          <details class="group bg-gray-50 rounded-lg">
+            <summary class="flex justify-between items-center p-6 cursor-pointer focus:outline-none focus:bg-gray-100 list-none">
+              <h3 class="font-semibold text-gray-900">How fast can I get my IDP?</h3>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Your digital IDP is delivered instantly to your email within 5 minutes of approval. If you choose a physical booklet, it's printed and shipped the same day with tracking information provided.
+            </div>
+          </details>
+
+          <details class="group bg-gray-50 rounded-lg">
+            <summary class="flex justify-between items-center p-6 cursor-pointer focus:outline-none focus:bg-gray-100 list-none">
+              <h3 class="font-semibold text-gray-900">Is the digital version accepted everywhere?</h3>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Most countries accept digital IDPs, but some (like UAE and Saudi Arabia) require physical booklets. We recommend checking your destination's requirements or choosing our Standard plan that includes both digital and physical copies.
+            </div>
+          </details>
+
+          <details class="group bg-gray-50 rounded-lg">
+            <summary class="flex justify-between items-center p-6 cursor-pointer focus:outline-none focus:bg-gray-100 list-none">
+              <h3 class="font-semibold text-gray-900">What if I'm not satisfied?</h3>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              We offer a 100% money-back guarantee within 30 days. If your IDP isn't accepted where it should be, or you're not satisfied for any reason, we'll refund your full payment.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="bg-blue-600 py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+          Ready to Drive Anywhere in the World?
+        </h2>
+        <p class="text-xl text-blue-100 mb-8 leading-relaxed">
+          Join over 500,000 satisfied travelers who trust us with their international driving needs. 
+          Get your IDP in 5 minutes and start your next adventure with confidence.
+        </p>
+        <a 
+          href="/apply"
+          class="bg-white hover:bg-gray-100 text-blue-600 font-bold py-4 px-8 rounded-lg text-lg transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 inline-block"
+        >
+          Apply for Your IDP Now - $49 →
+        </a>
+        <p class="text-blue-200 text-sm mt-4">
+          ✅ 5-minute digital delivery • ✅ 195+ countries • ✅ Money-back guarantee
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

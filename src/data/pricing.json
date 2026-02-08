@@ -1,0 +1,173 @@
+{
+  "plans": [
+    {
+      "id": "digital",
+      "name": "Digital IDP",
+      "subtitle": "Instant PDF delivery",
+      "price": "$49",
+      "originalPrice": "$69",
+      "discount": "29% OFF",
+      "processingTime": "5 minutes",
+      "validity": "1 year",
+      "mostPopular": false,
+      "features": [
+        "✅ Digital PDF delivered instantly",
+        "✅ Valid in 195+ countries",
+        "✅ Store on phone/tablet/laptop",
+        "✅ Email delivery & download portal",
+        "✅ 24/7 customer support",
+        "✅ 100% money-back guarantee",
+        "❌ Physical booklet not included",
+        "❌ Some countries require physical copy"
+      ],
+      "idealFor": "Digital-savvy travelers who need immediate access",
+      "buttonText": "Get Digital IDP",
+      "buttonUrl": "/apply?plan=digital"
+    },
+    {
+      "id": "standard",
+      "name": "Standard IDP",
+      "subtitle": "Digital + Physical delivery",
+      "price": "$89",
+      "originalPrice": "$119",
+      "discount": "25% OFF",
+      "processingTime": "5 minutes + shipping",
+      "validity": "1 year",
+      "mostPopular": true,
+      "features": [
+        "✅ Digital PDF delivered instantly",
+        "✅ Physical booklet shipped worldwide",
+        "✅ Valid in 195+ countries",
+        "✅ Accepted by all rental companies",
+        "✅ High-quality printed booklet",
+        "✅ Expedited shipping available",
+        "✅ 24/7 customer support",
+        "✅ 100% money-back guarantee"
+      ],
+      "idealFor": "Most travelers who want both convenience and compliance",
+      "buttonText": "Get Standard IDP",
+      "buttonUrl": "/apply?plan=standard",
+      "badge": "Most Popular"
+    },
+    {
+      "id": "express",
+      "name": "Express IDP",
+      "subtitle": "Priority processing & shipping",
+      "price": "$129",
+      "originalPrice": "$159",
+      "discount": "19% OFF",
+      "processingTime": "2 minutes + express shipping",
+      "validity": "1 year",
+      "mostPopular": false,
+      "features": [
+        "✅ Digital PDF in 2 minutes",
+        "✅ Priority express shipping (2-3 days)",
+        "✅ Premium printed booklet",
+        "✅ Valid in 195+ countries",
+        "✅ Tracking included",
+        "✅ Phone support priority",
+        "✅ Replacement guarantee",
+        "✅ 100% money-back guarantee"
+      ],
+      "idealFor": "Last-minute travelers who need fast delivery",
+      "buttonText": "Get Express IDP",
+      "buttonUrl": "/apply?plan=express"
+    }
+  ],
+  "additionalServices": [
+    {
+      "name": "Document Review Service",
+      "description": "Have our experts review your documents before processing",
+      "price": "$15",
+      "available": true
+    },
+    {
+      "name": "Rush Processing",
+      "description": "Priority processing within 1 minute (digital only)",
+      "price": "$25",
+      "available": true
+    },
+    {
+      "name": "Certified Translation",
+      "description": "Additional certified translation in specific languages",
+      "price": "$20",
+      "available": true
+    },
+    {
+      "name": "Replacement Service",
+      "description": "Get replacement IDP if lost or damaged",
+      "price": "$30",
+      "available": true
+    }
+  ],
+  "guarantees": [
+    {
+      "title": "100% Money-Back Guarantee",
+      "description": "If you're not satisfied, we'll refund your money within 30 days",
+      "icon": "💰"
+    },
+    {
+      "title": "Acceptance Guarantee", 
+      "description": "Your IDP will be accepted by authorities and rental companies",
+      "icon": "✅"
+    },
+    {
+      "title": "Replacement Guarantee",
+      "description": "Free replacement if your IDP is lost, stolen, or damaged",
+      "icon": "🔄"
+    },
+    {
+      "title": "Support Guarantee",
+      "description": "24/7 customer support available whenever you need help",
+      "icon": "🎧"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Which plan should I choose?",
+      "answer": "The Standard IDP is our most popular choice as it includes both instant digital access and a physical booklet. Choose Digital if you only need electronic access, or Express if you're traveling soon and need fast shipping."
+    },
+    {
+      "question": "How long is the IDP valid?",
+      "answer": "All our International Driving Permits are valid for 1 year from the date of issue, as per international conventions."
+    },
+    {
+      "question": "Can I upgrade my plan after purchase?",
+      "answer": "Yes, you can upgrade from Digital to Standard or Express within 24 hours of purchase by paying the difference."
+    },
+    {
+      "question": "What if I need it faster than Express shipping?",
+      "answer": "Contact our customer support for same-day or overnight shipping options in select locations (additional fees may apply)."
+    },
+    {
+      "question": "Do you offer refunds?",
+      "answer": "Yes, we offer a 100% money-back guarantee within 30 days of purchase if you're not completely satisfied."
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Sarah Johnson",
+      "country": "United States",
+      "rating": 5,
+      "text": "Got my IDP in 3 minutes! Used it in 6 countries across Europe. No issues with car rentals or police. Highly recommend!",
+      "plan": "standard",
+      "verified": true
+    },
+    {
+      "name": "Marco Rossi",
+      "country": "Italy",
+      "rating": 5,
+      "text": "Professional service and fast delivery. The physical booklet looks official and was accepted everywhere. Worth every penny.",
+      "plan": "standard",
+      "verified": true
+    },
+    {
+      "name": "Chen Wei",
+      "country": "Singapore",
+      "rating": 5,
+      "text": "Emergency trip to Japan, needed IDP urgently. Express option saved the day - got digital copy in 2 minutes and physical copy next day!",
+      "plan": "express", 
+      "verified": true
+    }
+  ]
+}

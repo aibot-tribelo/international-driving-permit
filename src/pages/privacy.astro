@@ -1,0 +1,308 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Privacy Policy - International Driving Permit Authority",
+  "description": "Read our comprehensive privacy policy explaining how we collect, use, and protect your personal information when applying for an International Driving Permit.",
+  "dateModified": "2026-02-08"
+};
+---
+
+<Layout 
+  title="Privacy Policy - International Driving Permit Authority"
+  description="Read our comprehensive privacy policy explaining how we collect, use, and protect your personal information when applying for an International Driving Permit."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+  
+  <Navigation />
+  
+  <main class="min-h-screen bg-gradient-to-br from-blue-50 to-white">
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-50">
+      Skip to main content
+    </a>
+
+    <!-- Header -->
+    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Privacy Policy</h1>
+          <p class="text-xl opacity-90 mb-4">
+            Protecting your personal information is our top priority
+          </p>
+          <p class="text-sm opacity-75">
+            Last updated: February 8, 2026
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section id="main-content" class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <!-- Introduction -->
+          <div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Introduction</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              International Driving Permit Authority ("we," "our," or "us") is committed to protecting 
+              your privacy and ensuring the security of your personal information. This Privacy Policy 
+              explains how we collect, use, disclose, and safeguard your information when you visit our 
+              website or use our services.
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+              By using our website or services, you consent to the data practices described in this policy. 
+              If you do not agree with this policy, please do not use our website or services.
+            </p>
+          </div>
+
+          <!-- Information We Collect -->
+          <div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Information We Collect</h2>
+            
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">Personal Information</h3>
+            <p class="text-gray-700 mb-4">
+              When you apply for an International Driving Permit, we collect:
+            </p>
+            <ul class="list-disc pl-6 text-gray-700 mb-6 space-y-2">
+              <li>Full name (as it appears on your driving license)</li>
+              <li>Date of birth</li>
+              <li>Residential address</li>
+              <li>Email address</li>
+              <li>Phone number</li>
+              <li>Driving license information (number, issue date, expiry date)</li>
+              <li>Passport-style photograph</li>
+              <li>Copy of your current driving license</li>
+              <li>Payment information (processed securely by our payment partners)</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">Automatically Collected Information</h3>
+            <p class="text-gray-700 mb-4">
+              When you visit our website, we may automatically collect:
+            </p>
+            <ul class="list-disc pl-6 text-gray-700 mb-6 space-y-2">
+              <li>IP address and location data</li>
+              <li>Browser type and version</li>
+              <li>Operating system</li>
+              <li>Pages visited and time spent on each page</li>
+              <li>Referring website or source</li>
+              <li>Device information (screen size, device type)</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">Cookies and Tracking Technologies</h3>
+            <p class="text-gray-700">
+              We use cookies, web beacons, and similar tracking technologies to enhance your 
+              browsing experience, analyze website traffic, and remember your preferences.
+            </p>
+          </div>
+
+          <!-- How We Use Your Information -->
+          <div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">How We Use Your Information</h2>
+            <p class="text-gray-700 mb-4">
+              We use the information we collect for the following purposes:
+            </p>
+            <ul class="list-disc pl-6 text-gray-700 space-y-2">
+              <li>Processing and issuing International Driving Permits</li>
+              <li>Verifying your identity and eligibility</li>
+              <li>Communicating with you about your application and order status</li>
+              <li>Providing customer support and responding to inquiries</li>
+              <li>Processing payments and preventing fraud</li>
+              <li>Improving our website and services</li>
+              <li>Complying with legal requirements and government requests</li>
+              <li>Sending important updates about our services (with your consent)</li>
+              <li>Analyzing usage patterns to enhance user experience</li>
+            </ul>
+          </div>
+
+          <!-- Information Sharing -->
+          <div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Information Sharing and Disclosure</h2>
+            <p class="text-gray-700 mb-4">
+              We do not sell, trade, or rent your personal information to third parties. 
+              We may share your information only in the following circumstances:
+            </p>
+
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Authorized Third Parties</h3>
+            <ul class="list-disc pl-6 text-gray-700 mb-6 space-y-2">
+              <li>Official automotive associations for IDP validation</li>
+              <li>Government agencies as required for legal compliance</li>
+              <li>Payment processors for secure transaction handling</li>
+              <li>Shipping partners for physical IDP delivery</li>
+              <li>IT service providers for secure data storage and processing</li>
+            </ul>
+
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Legal Requirements</h3>
+            <p class="text-gray-700 mb-6">
+              We may disclose your information when required by law, court order, or government 
+              regulation, or when we believe disclosure is necessary to protect our rights, 
+              your safety, or the safety of others.
+            </p>
+
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Business Transfers</h3>
+            <p class="text-gray-700">
+              In the event of a merger, acquisition, or sale of assets, your information may be 
+              transferred to the new entity, subject to the same privacy protections.
+            </p>
+          </div>
+
+          <!-- Data Security -->
+          <div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Data Security</h2>
+            <p class="text-gray-700 mb-4">
+              We implement industry-standard security measures to protect your personal information:
+            </p>
+            <ul class="list-disc pl-6 text-gray-700 space-y-2">
+              <li>256-bit SSL encryption for all data transmissions</li>
+              <li>Secure data centers with 24/7 monitoring</li>
+              <li>Regular security audits and penetration testing</li>
+              <li>Employee access controls and background checks</li>
+              <li>Automated backup systems and disaster recovery protocols</li>
+              <li>PCI DSS compliance for payment card data</li>
+              <li>Regular software updates and security patches</li>
+            </ul>
+          </div>
+
+          <!-- Your Rights -->
+          <div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Your Privacy Rights</h2>
+            <p class="text-gray-700 mb-4">
+              Depending on your location, you may have the following rights regarding your personal information:
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-3">Access and Portability</h3>
+                <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                  <li>Request access to your personal data</li>
+                  <li>Obtain a copy of your data in a portable format</li>
+                  <li>Receive information about how your data is processed</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-3">Correction and Deletion</h3>
+                <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                  <li>Correct inaccurate or incomplete data</li>
+                  <li>Request deletion of your personal data</li>
+                  <li>Withdraw consent for data processing</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+              <p class="text-gray-700">
+                <strong>Note:</strong> We may retain certain information as required by law or for 
+                legitimate business purposes, even after you request deletion.
+              </p>
+            </div>
+          </div>
+
+          <!-- Data Retention -->
+          <div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Data Retention</h2>
+            <p class="text-gray-700 mb-4">
+              We retain your personal information for as long as necessary to fulfill the purposes 
+              outlined in this policy, unless a longer retention period is required by law.
+            </p>
+            <ul class="list-disc pl-6 text-gray-700 space-y-2">
+              <li><strong>Application data:</strong> Retained for 7 years for compliance purposes</li>
+              <li><strong>Payment information:</strong> Processed by our payment partners and not stored by us</li>
+              <li><strong>Website analytics:</strong> Anonymized data retained for 2 years</li>
+              <li><strong>Customer communications:</strong> Retained for 3 years for support purposes</li>
+              <li><strong>Marketing consent:</strong> Until you withdraw consent or 2 years of inactivity</li>
+            </ul>
+          </div>
+
+          <!-- International Transfers -->
+          <div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">International Data Transfers</h2>
+            <p class="text-gray-700 mb-4">
+              Your information may be processed and stored in countries outside your residence. 
+              We ensure appropriate safeguards are in place when transferring data internationally:
+            </p>
+            <ul class="list-disc pl-6 text-gray-700 space-y-2">
+              <li>Standard contractual clauses approved by relevant authorities</li>
+              <li>Adequacy decisions recognizing equivalent protection levels</li>
+              <li>Certification schemes and codes of conduct</li>
+              <li>Binding corporate rules for intra-group transfers</li>
+            </ul>
+          </div>
+
+          <!-- Third-Party Links -->
+          <div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Third-Party Links</h2>
+            <p class="text-gray-700">
+              Our website may contain links to third-party websites. We are not responsible for 
+              the privacy practices of these external sites. We encourage you to review the privacy 
+              policies of any third-party websites you visit.
+            </p>
+          </div>
+
+          <!-- Changes to Privacy Policy -->
+          <div class="bg-white rounded-lg shadow-lg border border-gray-100 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Changes to This Privacy Policy</h2>
+            <p class="text-gray-700 mb-4">
+              We may update this Privacy Policy from time to time. We will notify you of any 
+              material changes by:
+            </p>
+            <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
+              <li>Posting a notice on our website</li>
+              <li>Sending an email to registered users</li>
+              <li>Updating the "Last modified" date at the top of this policy</li>
+            </ul>
+            <p class="text-gray-700">
+              Your continued use of our services after any changes indicates your acceptance 
+              of the updated policy.
+            </p>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="bg-blue-50 rounded-lg border border-blue-200 p-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Contact Us</h2>
+            <p class="text-gray-700 mb-4">
+              If you have any questions about this Privacy Policy or our data practices, 
+              please contact us:
+            </p>
+            <div class="space-y-3">
+              <div class="flex items-center">
+                <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 3.26a2 2 0 001.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <a href="mailto:privacy@internationalautomobileauthority.com" class="text-blue-600 hover:text-blue-800">
+                  privacy@internationalautomobileauthority.com
+                </a>
+              </div>
+              <div class="flex items-center">
+                <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21L6.16 10.928c-.652.35-.677 1.259-.1 1.837l1.92 1.92c.578.577 1.487.552 1.837-.1l1.541-4.064a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+                <a href="tel:+1-800-IDP-HELP" class="text-blue-600 hover:text-blue-800">
+                  +1-800-IDP-HELP
+                </a>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <div>
+                  <p class="text-gray-700">International Driving Permit Authority</p>
+                  <p class="text-gray-700">Privacy Officer</p>
+                  <p class="text-gray-700">123 International Drive</p>
+                  <p class="text-gray-700">Global City, GC 12345</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
